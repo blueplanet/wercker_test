@@ -3,6 +3,9 @@ services:
     - mysql
 build:
     steps:
+        - rvm-use:
+          version: 2.2.1
+
         - install-packages:
           packages: qt5-default libqt5webkit5-dev
         - bundle-install
