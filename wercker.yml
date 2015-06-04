@@ -18,4 +18,4 @@ build:
                 echo -p "gem list: $(gem list)"
 
         - script:
-               code: bin/rspec spec/models
+               code: rspec spec/models
