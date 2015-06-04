@@ -16,6 +16,9 @@ build:
                 echo "ruby version $(ruby --version) running"
                 echo "from location $(which ruby)"
                 echo -p "gem list: $(gem list)"
+        - script:
+            name: setup mysql
+            code: bundle exec rake db:create db:schema:load
 
         - script:
                code: rspec spec/models
