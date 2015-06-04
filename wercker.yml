@@ -18,8 +18,4 @@ build:
                 echo -p "gem list: $(gem list)"
 
         - script:
-               name: routing spec
-               code: bin/rspec spec/routing
-
-        - script:
                code: bin/rspec spec/models
