@@ -22,4 +22,9 @@ build:
             code: RAILS_ENV=test bundle exec rake db:create db:schema:load
 
         - script:
+            name: echo database.yml
+            code: |
+                cat config/database.yml
+
+        - script:
                code: RAILS_ENV=test rspec spec/models
