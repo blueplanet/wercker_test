@@ -22,4 +22,4 @@ build:
             code: RAILS_ENV=test bundle exec rake db:create db:schema:load
 
         - script:
-               code: rspec spec/models
+               code: RAILS_ENV=test rspec spec/models
