@@ -6,7 +6,7 @@ build:
         - install-packages:
           packages: qt5-default libqt5webkit5-dev
         - bundle-install
-        - rails-database-yml
+        - rails-database-yml:
           service: mysql
 
         # A custom script step, name value is used in the UI
