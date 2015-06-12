@@ -4,10 +4,9 @@ services:
 build:
     steps:
         - install-packages:
-          packages: qt5-default libqt5webkit5-dev
+            packages: qt5-default libqt5webkit5-dev
         - bundle-install
-        - rails-database-yml:
-          service: mysql-docker
+        - rails-database-yml
 
         # A custom script step, name value is used in the UI
         # and the code value contains the command that get executed
@@ -17,14 +16,6 @@ build:
                 echo "ruby version $(ruby --version) running"
                 echo "from location $(which ruby)"
                 echo -p "gem list: $(gem list)"
-        - script:
-            name: setup mysql
-            code: RAILS_ENV=test bundle exec rake db:create db:schema:load
 
         - script:
-            name: echo database.yml
-            code: |
-                cat config/database.yml
-
-        - script:
-               code: RAILS_ENV=test rspec spec/models
+               code: bin/rspec spec/models
