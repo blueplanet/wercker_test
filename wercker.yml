@@ -1,6 +1,11 @@
 box: rails:4.2.1
 services:
-    - mysql
+    - id: mysql
+      env:
+        MYSQL_ROOT_PASSWORD: test
+        MYSQL_DATABASE: test
+        MYSQL_USER: test
+        MYSQL_PASSWORD: test
 build:
     steps:
         - install-packages:
