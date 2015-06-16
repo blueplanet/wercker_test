@@ -23,4 +23,8 @@ build:
                 echo -p "gem list: $(gem list)"
 
         - script:
+            name: Set up db
+            code: bin/rake db:migrate RAILS_ENV=test
+
+        - script:
                code: bin/rspec spec/models
